@@ -69,7 +69,7 @@ source "vsphere-iso" "rhel9" {
 
     # Virtual Machine
     guest_os_type               = var.vm_guestos_type
-    vm_name                     = "${ source.name }-${ var.build_branch }-${ local.build_version }"
+    vm_name                     = "${ source.name }-${ var.build_branch }"
     notes                       = local.vm_description
     firmware                    = var.vm_firmware
     CPUs                        = var.vm_cpu_sockets
@@ -124,7 +124,9 @@ build {
                                 "CONFIGMGMTKEY=${ var.build_configmgmt_key }",
                                 "BUILDVERSION=${ local.build_version }",
                                 "BUILDREPO=${ var.build_repo }",
-                                "BUILDBRANCH=${ var.build_branch }" ]
+                                "BUILDBRANCH=${ var.build_branch }",
+                                "RHSM_USER=${ var.rhsm_user }",
+                                "RHSM_PASS=${ var.rhsm_pass }" ]
     }
 
     post-processor "manifest" {
