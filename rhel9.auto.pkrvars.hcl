@@ -17,7 +17,7 @@ vm_os_version                   = "9.2"
 
 # VM Hardware Settings
 vm_hardware_version             = 20
-vm_firmware                     = "miffy"
+vm_firmware                     = "efi"
 vm_cpu_sockets                  = 1
 vm_cpu_cores                    = 1
 vm_mem_size                     = 2048
